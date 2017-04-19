@@ -1,0 +1,53 @@
+.afterNav
+{
+    margin-top: 200px;
+}
+
+.tableBold
+{
+    font-weight: bold;
+}
+
+
+/*
+    nav
+*/
+.navbar-inverse
+{
+    background-image: none;
+    background-color: #002140;
+    border-bottom: #337ab7;
+    color: #fff;
+}
+
+.navbar-inverse .navbar-brand
+{
+    color:white;
+
+}
+
+.navbar-inverse .navbar-nav>li>a
+{
+    color:white;
+    min-width: 100px;
+    text-align: center;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover
+{
+    transition: 1s;
+    background-color: #001123;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover
+{
+
+    background-color: #001123;
+}
+
+
+
+.error
+{
+    color: crimson;
+}
