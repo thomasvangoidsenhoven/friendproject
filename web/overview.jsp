@@ -26,6 +26,7 @@
                 <th>firstname</th>
                 <th>lastname</th>
                 <th>role</th>
+                <th>status</th>
             </tr>
         </thead>
         <tbody id="friendtable">
@@ -35,6 +36,7 @@
                 <td>${friend.firstName}</td>
                 <td>${friend.lastName}</td>
                 <td>${friend.role}</td>
+                <td>${friend.status}</td>
             </tr>
         </c:forEach>
         </tbody>
@@ -48,6 +50,7 @@
                 <th>firstname</th>
                 <th>lastname</th>
                 <th>role</th>
+                <th>status</th>
                 <th>add friend</th>
             </tr>
         </thead>
@@ -58,6 +61,7 @@
                 <td>${person.firstName}</td>
                 <td>${person.lastName}</td>
                 <td>${person.role}</td>
+                <td>${person.status}</td>
                 <td><a class="addFriend" href="#" id="${person.userId}"  >add friend</a></td>
             </tr>
         </c:forEach>

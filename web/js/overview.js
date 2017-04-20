@@ -4,7 +4,7 @@
 var xHRObject = new XMLHttpRequest();
 var persons = document.getElementsByClassName("addFriend");
 
-function addFriendTableRow(id,firstname,lastname,role)
+function addFriendTableRow(id,firstname,lastname,role, status)
 {
     var table = document.getElementById("friendtable");
     var tableTR = document.createElement("tr");
@@ -21,18 +21,22 @@ function addFriendTableRow(id,firstname,lastname,role)
     var roleTD = document.createElement("td");
     roleTD.innerHTML = role;
 
+    var statusTD = document.createElement("td");
+    statusTD.innerHTML = satus;
+
     table.appendChild(tableTR);
     tableTR.appendChild(idTD);
     tableTR.appendChild(firstNameTD);
     tableTR.appendChild(lastNameTD);
     tableTR.appendChild(roleTD);
+    tableTR.appendChild(statusTD);
 }
 
 function getData () {
     if (xHRObject.status == 200) {
         if (xHRObject.readyState == 4) {
             var serverResponse = JSON.parse(xHRObject.responseText);
-            addFriendTableRow(serverResponse.friend.id,serverResponse.friend.firstname,serverResponse.friend.lastname,serverResponse.friend.role);
+            addFriendTableRow(serverResponse.friend.id,serverResponse.friend.firstname,serverResponse.friend.lastname,serverResponse.friend.role, serverResponse.friend.status);
             /*
             var quote = serverResponse.quote; // of je kan ook doen: serverResponse["quote"]
 

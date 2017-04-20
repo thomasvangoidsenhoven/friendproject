@@ -24,7 +24,8 @@ public class asyncAddFriend extends RequestHandler {
                         "\"id\" : " + "\"" + requested.getUserId() + "\"" + ",\n"+
                         "\"firstname\" : "  + "\"" + requested.getFirstName() + "\"" + ",\n"+
                         "\"lastname\" : " + "\"" + requested.getLastName() + "\"" + ",\n"+
-                        "\"role\" : " + "\"" + requested.getRole() + "\"" + "\n"+
+                        "\"role\" : " + "\"" + requested.getRole() + "\"" + ",\n"+
+                        "\"status\" : " + "\"" + requested.getStatus() + "\"" + "\n"+
                     "} \n"+
                 "}"
         ;
