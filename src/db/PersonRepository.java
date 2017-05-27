@@ -22,11 +22,13 @@ public class PersonRepository
         person.setLastName("admin");
         person.setHashedPassword("t");
         person.setRole(Role.ADMIN);
+        person.setStatus("Offline");
         add(person);
 
         Person member = new Person();
         member.setUserId("thomas@members.com");
         member.setHashedPassword("t");
+        member.setStatus("Offline");
         add(member);
 
 

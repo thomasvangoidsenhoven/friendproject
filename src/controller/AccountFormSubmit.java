@@ -2,7 +2,6 @@ package controller;
 
 import domain.DomainException;
 import domain.Person;
-import domain.Status;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -55,7 +54,7 @@ public class AccountFormSubmit extends RequestHandler {
             return "accountForm";
         }
 
-        person.setStatus(Status.ONLINE);
+        person.setStatus("ONLINE");
         super.getService().addPerson(person);
         HttpSession session = request.getSession();
         session.setAttribute("user", person);

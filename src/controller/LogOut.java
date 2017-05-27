@@ -1,7 +1,6 @@
 package controller;
 
 import domain.Person;
-import domain.Status;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,7 +16,7 @@ public class LogOut extends RequestHandler {
                                 HttpServletResponse response) {
         HttpSession session = request.getSession();
         Person person = (Person) session.getAttribute("user");
-        person.setStatus(Status.OFFLINE);
+        person.setStatus("OFFLINE");
         session.invalidate();
         return "index.jsp";
     }

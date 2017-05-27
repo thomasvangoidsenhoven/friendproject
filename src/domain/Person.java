@@ -22,7 +22,7 @@ public class Person {
     private String firstName;
     private String lastName;
     private Role role;
-    private Status status;
+    private String status;
     private List<Person> friends = new ArrayList<Person>();
 
     public Person(String userId, String password, String firstName,
@@ -65,10 +65,10 @@ public class Person {
         this.setRole(Role.MEMBER);
     }
 
-    public Status getStatus()
+    public String getStatus()
     {return this.status;}
 
-    public void setStatus(Status status){this.status = status;}
+    public void setStatus(String status){this.status = status;}
 
     public Role getRole() {
         return this.role;

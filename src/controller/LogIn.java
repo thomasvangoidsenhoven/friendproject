@@ -1,7 +1,6 @@
 package controller;
 
 import domain.Person;
-import domain.Status;
 import service.PersonService;
 
 import javax.servlet.http.HttpServletRequest;
@@ -50,7 +49,7 @@ public class LogIn extends RequestHandler {
 
     private void createSession(Person person, HttpServletRequest request,
                                HttpServletResponse response) {
-        person.setStatus(Status.ONLINE);
+        person.setStatus("ONLINE");
         HttpSession session = request.getSession();
         session.setAttribute("user", person);
     }

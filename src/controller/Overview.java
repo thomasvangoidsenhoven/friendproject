@@ -1,6 +1,7 @@
 package controller;
 
 import domain.Person;
+import domain.Status;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,6 +16,8 @@ public class Overview extends RequestHandler
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
         Person currentUser = (Person) session.getAttribute("user");
+        request.setAttribute("currentStatus", currentUser.getStatus());
+        request.setAttribute("statuss", Status.values());
         request.setAttribute("friends", super.getService().getFriends(currentUser));
         request.setAttribute("users",super.getService().getPersons());
         return "overview.jsp";

@@ -18,6 +18,20 @@
 
 <div class="container afterNav">
 
+    <p id="currentStatus">Current status: ${currentStatus}</p>
+    <p>Change Status: </p>
+    <ul class="statuslist">
+
+        <c:forEach var="status" items="${statuss}">
+            <li><a class="statusi" href="#">${status}</a></li>
+
+        </c:forEach>
+        <li>
+            <label for="customStatus">Custom: </label>
+            <input id="customStatus" type="text"/><a class="statusi" href="#">submit</a>
+        </li>
+    </ul>
+
     <h1>Your Friends:</h1>
     <table class="table table-responsive table-striped table-hover">
         <thead>
