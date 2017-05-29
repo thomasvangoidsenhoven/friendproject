@@ -1,6 +1,7 @@
 package controller;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import domain.Person;
 
 
@@ -17,9 +18,13 @@ public class asyncChangeStatus extends RequestHandler  {
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) throws IOException  {
         HttpSession session = request.getSession();
         Person requestee = (Person) session.getAttribute("user");
-        Gson gson = new Gson();
-        String json = gson.toJson(requestee);
+        String newStatus = request.getParameter("status");
+        requestee.setStatus(newStatus);
+        getService().updatePersons(requestee);
 
+        Gson gson = new GsonBuilder().create();
+        String json = gson.toJson(requestee);
+        response.setContentType("application/json");
         System.out.println(json);
         response.getWriter().write(json);
         return "async";

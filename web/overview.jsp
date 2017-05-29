@@ -28,7 +28,7 @@
         </c:forEach>
         <li>
             <label for="customStatus">Custom: </label>
-            <input id="customStatus" type="text"/><a class="statusi" href="#">submit</a>
+            <input id="customStatus"  type="text"/><button class="statusi"  href="#">submit</button>
         </li>
     </ul>
 
@@ -45,7 +45,7 @@
         </thead>
         <tbody id="friendtable">
         <c:forEach var="friend" items="${friends}">
-            <tr>
+            <tr id="friend_${friend.userId}">
                 <td>${friend.userId}</td>
                 <td>${friend.firstName}</td>
                 <td>${friend.lastName}</td>
@@ -68,14 +68,14 @@
                 <th>add friend</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="personTable">
         <c:forEach var="person" items="${users}">
-            <tr>
+            <tr id="">
                 <td>${person.userId}</td>
                 <td>${person.firstName}</td>
                 <td>${person.lastName}</td>
                 <td>${person.role}</td>
-                <td>${person.status}</td>
+                <td id="status_${person.userId}">${person.status}</td>
                 <td><a class="addFriend" href="#" id="${person.userId}"  >add friend</a></td>
             </tr>
         </c:forEach>

@@ -1,5 +1,7 @@
 package domain;
 
+import com.google.gson.annotations.Expose;
+
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
@@ -23,7 +25,8 @@ public class Person {
     private String lastName;
     private Role role;
     private String status;
-    private List<Person> friends = new ArrayList<Person>();
+
+    private transient  List<Person> friends = new ArrayList<Person>();
 
     public Person(String userId, String password, String firstName,
                   String lastName,Role role) {

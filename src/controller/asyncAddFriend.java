@@ -22,14 +22,15 @@ public class asyncAddFriend extends RequestHandler {
                 "{\n"+
                     "\"friend\" :{\n"+
                         "\"id\" : " + "\"" + requested.getUserId() + "\"" + ",\n"+
-                        "\"firstname\" : "  + "\"" + requested.getFirstName() + "\"" + ",\n"+
-                        "\"lastname\" : " + "\"" + requested.getLastName() + "\"" + ",\n"+
+                        "\"firstName\" : "  + "\"" + requested.getFirstName() + "\"" + ",\n"+
+                        "\"lastName\" : " + "\"" + requested.getLastName() + "\"" + ",\n"+
                         "\"role\" : " + "\"" + requested.getRole() + "\"" + ",\n"+
                         "\"status\" : " + "\"" + requested.getStatus() + "\"" + "\n"+
                     "} \n"+
                 "}"
         ;
         System.out.println(json);
+        response.setContentType("application/json");
         response.getWriter().write(json);
         return "async";
     }

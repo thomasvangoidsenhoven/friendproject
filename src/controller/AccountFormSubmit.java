@@ -2,6 +2,7 @@ package controller;
 
 import domain.DomainException;
 import domain.Person;
+import domain.Status;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -59,6 +60,9 @@ public class AccountFormSubmit extends RequestHandler {
         HttpSession session = request.getSession();
         session.setAttribute("user", person);
         request.setAttribute("users",getService().getPersons());
+        request.setAttribute("currentStatus", person.getStatus());
+        request.setAttribute("statuss", Status.values());
+        request.setAttribute("friends", super.getService().getFriends(person));
         return "overview.jsp";
 
     }
