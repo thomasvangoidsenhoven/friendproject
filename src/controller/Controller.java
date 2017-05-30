@@ -18,7 +18,7 @@ import java.util.List;
 @WebServlet("/Controller")
 public class Controller extends HttpServlet
 {
-    private PersonService model = new PersonService();
+    public static PersonService model = new PersonService();
 
     private ControllerFactory controllerFactory = new ControllerFactory();
 
@@ -57,6 +57,8 @@ public class Controller extends HttpServlet
                 destination="index.jsp";
             }
         }
+
+        request.setAttribute("user", request.getSession().getAttribute("user"));
         RequestDispatcher view = request.getRequestDispatcher(destination);
         view.forward(request, response);
     }

@@ -28,12 +28,17 @@ function addFriendTableRow(id,firstname,lastname,role, status)
     var statusTD = document.createElement("td");
     statusTD.innerHTML = status;
 
+    var chatTD = document.createElement("td");
+
+    chatTD.innerHTML = "<a href='#'  class='chatProc'> Chat ._. </a>";
+
     table.appendChild(tableTR);
     tableTR.appendChild(idTD);
     tableTR.appendChild(firstNameTD);
     tableTR.appendChild(lastNameTD);
     tableTR.appendChild(roleTD);
     tableTR.appendChild(statusTD);
+    tableTR.appendChild(chatTD);
 }
 
 function getDataForAddFriend () {

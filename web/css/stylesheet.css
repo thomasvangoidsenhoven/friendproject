@@ -57,6 +57,17 @@
     background-color: #001123;
 }
 
+.flexbox
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.flexbox article
+{
+    width: 33%;
+}
 
 
 .error

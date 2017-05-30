@@ -2,6 +2,7 @@ package controller;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import controller.RequestHandler;
 import domain.Person;
 
 
@@ -13,7 +14,7 @@ import java.io.IOException;
 /**
  * Created by Thomas on 17/04/2017.
  */
-public class asyncChangeStatus extends RequestHandler  {
+public class asyncChangeStatus extends RequestHandler {
     @Override
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) throws IOException  {
         HttpSession session = request.getSession();

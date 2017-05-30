@@ -51,6 +51,7 @@
                 <td>${friend.lastName}</td>
                 <td>${friend.role}</td>
                 <td>${friend.status}</td>
+                <td><a href="#"  class="chatProc">Chat ._.</a></td>
             </tr>
         </c:forEach>
         </tbody>
@@ -83,6 +84,12 @@
 
     </table>
 </div>
+
+<footer id="chat">
+
+</footer>
+<script src="js/jquery-1.4.4.min.js"></script>
+<script src="js/chat.js"></script>
 <script src="js/overview.js"></script>
 </body>
 </html>
