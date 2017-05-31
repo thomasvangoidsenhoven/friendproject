@@ -93,6 +93,7 @@
 
 </footer>
 <script src="js/jquery-1.4.4.min.js"></script>
+<script src="js/fancy.js"></script>
 <script src="js/chat.js"></script>
 <script src="js/overview.js"></script>
 </body>
