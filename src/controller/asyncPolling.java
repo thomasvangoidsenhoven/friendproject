@@ -28,7 +28,7 @@ public class asyncPolling extends RequestHandler {
         Gson gson = new Gson();
         String json = gson.toJson(megaList);
         response.setContentType("application/json");
-        System.out.println("pull request:" + json);
+
         response.getWriter().write(json);
         return "async";
     }

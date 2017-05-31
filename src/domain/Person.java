@@ -8,7 +8,9 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -22,18 +24,29 @@ public class Person {
     private String password;
     private String salt;
     private String firstName;
+
     private String lastName;
     private Role role;
     private String status;
 
+    private transient Map<Integer,MessageBinding> messageBindings = new HashMap<>();
     private transient  List<Person> friends = new ArrayList<Person>();
 
+    public Map<Integer,MessageBinding> getMessageBindings() {
+        return messageBindings;
+    }
+
+    public void setMessageBindings(Map<Integer,MessageBinding> messageBindings) {
+        this.messageBindings = messageBindings;
+    }
+
     public Person(String userId, String password, String firstName,
-                  String lastName,Role role) {
+                  String lastName, Role role) {
         setUserId(userId);
         setHashedPassword(password);
         setFirstName(firstName);
         setLastName(lastName);
+
         setRole(role);
     }
 

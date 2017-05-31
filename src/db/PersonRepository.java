@@ -27,6 +27,7 @@ public class PersonRepository
 
         Person member = new Person();
         member.setUserId("thomas@members.com");
+        member.setFirstName("thomas");
         member.setHashedPassword("t");
         member.setStatus("Offline");
         add(member);

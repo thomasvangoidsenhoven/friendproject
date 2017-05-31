@@ -30,7 +30,7 @@ function addFriendTableRow(id,firstname,lastname,role, status)
 
     var chatTD = document.createElement("td");
 
-    chatTD.innerHTML = "<a href='#'  class='chatProc'> Chat ._. </a>";
+    chatTD.innerHTML = "<a href='#'  id='chat_" + id + "' class='chatProc'> Chat ._. </a>";
 
     table.appendChild(tableTR);
     tableTR.appendChild(idTD);
@@ -39,6 +39,8 @@ function addFriendTableRow(id,firstname,lastname,role, status)
     tableTR.appendChild(roleTD);
     tableTR.appendChild(statusTD);
     tableTR.appendChild(chatTD);
+
+    bindButtons();
 }
 
 function getDataForAddFriend () {
@@ -192,3 +194,4 @@ function updateTables() {
 addEventTo(persons);
 addEventToStatus(statusi)
 updateTables();
+

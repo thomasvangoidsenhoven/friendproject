@@ -16,6 +16,7 @@ public class Overview extends RequestHandler
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
         Person currentUser = (Person) session.getAttribute("user");
+        if(currentUser == null) return "index.jsp";
         request.setAttribute("currentStatus", currentUser.getStatus());
         request.setAttribute("statuss", Status.values());
         request.setAttribute("friends", super.getService().getFriends(currentUser));

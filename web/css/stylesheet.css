@@ -69,6 +69,11 @@
     width: 33%;
 }
 
+footer
+{
+    position: fixed;
+    bottom:0;
+}
 
 .error
 {
