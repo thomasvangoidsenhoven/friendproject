@@ -3,9 +3,6 @@
  */
 var websocket;
 var path = "friendapp";
-var kolom1 = document.getElementById("k1");
-var kolom2 = document.getElementById("k2");
-var kolom3 = document.getElementById("k3");
 
 var submitbuttons = document.getElementsByClassName("submit");
 
@@ -28,11 +25,19 @@ function openSocket()
         else if (parsed.id == 3)
         {
             hook = document.getElementById("k3");
+        }else if(parsed.id == 4)
+        {
+            hook = document.getElementById("k4");
+        }else if(parsed.id == 5)
+        {
+            hook = document.getElementById("k5");
         }
+
 
         var li = document.createElement("li");
         var author = document.createElement("p");
         var message = document.createElement("p");
+        var score = document.createElement("p");
 
         if(parsed.user === "")
         {
@@ -44,10 +49,12 @@ function openSocket()
         }
 
         message.innerHTML = "message: " +parsed.message;
+        score.innerHTML = "score: " +parsed.score;
 
         hook.appendChild(li);
         li.appendChild(author);
         li.appendChild(message);
+        li.appendChild(score)
         li.appendChild(document.createElement("hr"));
 
     };
@@ -74,7 +81,17 @@ function callToAction()
 {
     var id = this.id;
     var message = document.getElementById("input"+id).value;
-    var trunkedmessage = "{\"user\":" + "\"" +document.getElementById("user").value +  "\"" + ",\"message\": "+  "\"" + message +  "\"" + ",\"id\": " + id + "}";
+    var score = document.getElementById("input"+id+"s").value;
+
+    var trunkedmessage;
+    if(score == "")
+    {
+        trunkedmessage ="{\"user\":" + "\"" +document.getElementById("user").value +  "\"" + ",\"message\": "+  "\"" + message +  "\"" + ",\"id\": " + id + ", " + "\"score\"" + " : " + "\" no score given \"" + "}";
+    }else
+        {
+            trunkedmessage = "{\"user\":" + "\"" +document.getElementById("user").value +  "\"" + ",\"message\": "+  "\"" + message +  "\"" + ",\"id\": " + id + ", " + "\"score\"" + " : " + score + "}";
+        }
+
     console.log("sending: " + trunkedmessage);
     send(trunkedmessage);
 }

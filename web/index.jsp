@@ -21,16 +21,33 @@
                 <h3>Naar welke muziek ben je aan het luisteren?</h3>
                 <ul id="k1"></ul>
                 <input id="input1" type="text"> <button id="1" class="submit">Submit</button>
+                <input id="input1s" type="number">
             </article>
             <article>
                 <h3>Wat vind jij van het dit geweldig vak?</h3>
                 <ul id="k2"></ul>
                 <input id="input2" type="text"> <button id="2" class="submit" >Submit</button>
+                <input id="input2s" type="number">
+
             </article>
             <article>
                 <h3>Hoe is het weer bij jou?</h3>
                 <ul id="k3"></ul>
                 <input id="input3" type="text"> <button id="3" class="submit" >Submit</button>
+                <input id="input3s" type="number">
+            </article>
+            <article>
+                <h3>Wat vind jij van de nieuwe import tax?</h3>
+                <ul id="k4"></ul>
+                <input id="input4" type="text"> <button id="4" class="submit" >Submit</button>
+                <input id="input4s" type="number">
+            </article>
+            <article>
+                <h3>Gaat de brexit zelfs nog doorgaan?</h3>
+                <ul id="k5"></ul>
+                <input id="input5" type="text"><button id="5" class="submit" >Submit</button>
+                <input id="input5s" type="number" >
+
             </article>
         </section>
 </main>

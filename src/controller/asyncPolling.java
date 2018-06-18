@@ -21,13 +21,25 @@ public class asyncPolling extends RequestHandler {
 
         Person requestee = (Person) session.getAttribute("user");
 
+        response.setContentType("application/json");
+        response.addHeader("Access-Control-Allow-Origin", "*");
+        Gson gson = new Gson();
+        if(requestee == null)
+        {
+            String smallJson = gson.toJson(getService().getPersons());
+            response.getWriter().write(smallJson);
+            return "async";
+        }
+
         List<List> megaList = new ArrayList<>();
         megaList.add(getService().getPersons());
+
+
         megaList.add(getService().getFriends(requestee));
 
-        Gson gson = new Gson();
+
+
         String json = gson.toJson(megaList);
-        response.setContentType("application/json");
 
         response.getWriter().write(json);
         return "async";

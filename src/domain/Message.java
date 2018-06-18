@@ -7,6 +7,8 @@ public class Message {
     private String author;
     private String message;
 
+
+
     public String getAuthor() {
         return author;
     }
@@ -22,4 +24,6 @@ public class Message {
     public void setMessage(String message) {
         this.message = message;
     }
+
+
 }
